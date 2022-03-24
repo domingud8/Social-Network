@@ -1,0 +1,521 @@
+body {
+    background-color: ghostwhite;
+    margin: 10px;
+    color: #467503;
+    font-size: 20px;
+}
+
+.App {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.app-login-experience {
+    padding: 0;
+}
+
+header {
+    border-radius: 25px;
+    border: 4px solid #73ad21;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header > img {
+    padding: 0px;
+    width: 60px;
+    height: 60px;
+    align-self: center;
+}
+header nav {
+    display: flex;
+}
+
+header nav a {
+    margin: 0;
+    margin: 0;
+    padding: 40px;
+    display: block;
+    text-decoration: none;
+    color: #467503;
+}
+
+header nav a.active {
+    color: white;
+    background-color: #73ad21;
+}
+
+.picture-comp {
+    padding: 0px;
+    width: 60px;
+    height: 60px;
+    align-self: center;
+}
+
+.modal-comp {
+    margin: 10px;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    /* the transition on the opacity makes the fade-in effect */
+    transition: opacity 0.4s ease-in-out;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    background-color: rgb(231, 212, 212);
+    border: 5px solid #73ad21;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-comp.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-cont {
+    background-color: rgb(231, 212, 212);
+    margin: 0;
+    padding: 0;
+}
+
+.close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    appearance: none;
+    border: none;
+    line-height: 3rem;
+    width: 3rem;
+    font-size: 2.5rem;
+}
+
+.close-button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.profile-wrapper {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.welcome {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    text-align: center;
+    margin: 30px;
+}
+
+.img-profile {
+    grid-column: 1 span 1;
+    grid-row: 2;
+    padding-left: 50px;
+    margin-bottom: 20px;
+}
+
+.img-profile > img {
+    width: 300px;
+    height: 300px;
+}
+
+.bio-profile {
+    padding: 30px;
+    grid-column: 2 span 1;
+    grid-row: 2;
+}
+
+.display-mode {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.display-mode > button {
+    margin: 30px;
+    padding: 20px;
+}
+
+.logoutexp-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoutexp-form > input {
+    margin: 5px;
+    padding: 2px;
+    padding-left: 10px;
+    width: 300px;
+    height: 50px;
+    border: 3px solid #73ad21;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 20px;
+}
+
+.logoutexp-form > button {
+    box-sizing: border-box;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #73ad21;
+    border-radius: 0.6em;
+    color: #73ad21;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 5px;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.logoutexp-form > button:hover,
+.logoutexp-form > button:focus {
+    color: #fff;
+    outline: 0;
+    box-shadow: 0 0 40px 40px #73ad21 inset;
+}
+
+.btn {
+    box-sizing: border-box;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #73ad21;
+    border-radius: 0.6em;
+    color: #73ad21;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 5px;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+    color: #fff;
+    outline: 0;
+    box-shadow: 0 0 40px 40px #73ad21 inset;
+}
+
+.links {
+    color: #73ad21;
+    text-align: center;
+    margin: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.form-edit-mode {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-edit-mode > textarea {
+    margin: 30px;
+    padding: 20px;
+    width: 400px;
+    height: 200px;
+    border: 3px solid #73ad21;
+    overflow: hidden;
+}
+
+.buttons-form-edit-mode {
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons-form-edit-mode > button {
+    margin: 10px;
+    padding: 10px;
+}
+
+.about-bio {
+    border: 2px solid #73ad21;
+    padding: 20px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.find-people {
+    display: flex;
+    align-content: center;
+}
+
+.list-last-people {
+    margin: 10px;
+    background-color: antiquewhite;
+    padding: 20px;
+    border-radius: 25px;
+    border: 4px dotted #73ad21;
+    height: 400px;
+}
+.list-last-people ul {
+    padding: 0px;
+    list-style: none;
+}
+
+.list-online-persons {
+    padding: 10px;
+    list-style: none;
+    text-align: center;
+    font-size: 18px;
+}
+
+.list-online-persons > li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.list-online-persons > li > img {
+    margin: 20px;
+}
+
+.friends-container {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.wannabes-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+    border: 4px dotted #73ad21;
+    border-radius: 20px;
+    padding-left: 0px;
+    padding-right: 50px;
+    margin-top: 30px;
+    width: 30vw;
+}
+
+.list-wannables > li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.list-wannables > li > img {
+    margin-right: 10px;
+}
+
+.list-wannables > li > button {
+    margin-left: 10px;
+}
+
+.friends-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+    border: 4px dotted #73ad21;
+    border-radius: 20px;
+    padding-left: 0px;
+    padding-right: 50px;
+    margin-top: 30px;
+    width: 30vw;
+    min-height: 90vh;
+}
+
+.list-friends > li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.list-friends > li > img {
+    margin-right: 10px;
+}
+
+.list-friends > li > button {
+    margin-left: 10px;
+}
+
+.list-search-people {
+    margin: 10px;
+    padding: 20px;
+}
+.list-search-people ul {
+    list-style: none;
+}
+
+.each-user {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.each-user img {
+    width: 80px;
+    height: 80px;
+    padding: 0px;
+    margin: 10px;
+}
+
+.other_profile {
+    font-size: 23px;
+}
+
+.each-user-d > img {
+    margin-top: 25px;
+    width: 200px;
+    height: 200px;
+}
+
+.btn-2 {
+    box-sizing: border-box;
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid #73ad21;
+    border-radius: 0.6em;
+    color: #73ad21;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 1px;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.btn-2:hover,
+.btn-2:focus {
+    color: #fff;
+    outline: 0;
+    box-shadow: 0 0 40px 40px #73ad21 inset;
+}
+
+/*Chat section*/
+
+.chat {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    width: 100vw;
+    padding: 20px;
+}
+
+.online-users {
+    padding-top: 20px;
+    font-size: 30px;
+    text-align: center;
+    height: auto;
+    background-color: antiquewhite;
+    border: 3px dashed #73ad21;
+    list-style: none;
+    margin-right: 40px;
+    width: 30%;
+}
+
+.chat-online {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.chat-messages {
+    margin: 20px;
+    padding: 0;
+    width: 90%;
+    height: 500px;
+    overflow: auto;
+    border: 3px solid #73ad21;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.chat-messages li {
+    width: 80%;
+    background-color: antiquewhite;
+    padding: 10px;
+    margin: 10px;
+    color: #476916;
+    line-height: 3rem;
+    padding: 0 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-messages li.mymessage {
+    background-color: rgb(151, 214, 243);
+    align-self: flex-start;
+}
+.form-submit-chat {
+    display: flex;
+    justify-content: center;
+}
+
+.form-submit-chat > input {
+    height: 100px;
+    width: 400px;
+    margin: 20px;
+    border: 3px solid #73ad21;
+    font-size: 20px;
+    color: #476916;
+}
+
+.chat-intro {
+    display: flex;
+    align-items: center;
+}
+
+.chat-intro > img {
+    margin: 10px;
+}
+
+.chat-text {
+    font-weight: bolder;
+}
